@@ -51,4 +51,11 @@ public class Articoli implements Serializable {
     @OneToOne(mappedBy = "articolo", cascade = CascadeType.ALL, orphanRemoval = true)
     private Ingredienti ingredienti;
 
+    @ManyToOne
+    @JoinColumn(name = "IDIVA", referencedColumnName = "idIva")
+    private Iva iva;
+
+    @ManyToOne
+    @JoinColumn(name = "IDFAMASS", referencedColumnName = "ID")
+    private FamAssort famAssort;
 }
