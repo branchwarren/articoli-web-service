@@ -74,7 +74,7 @@ public class ArticoliRepositoryTest
 	@Order(2)
 	public void TestfindByDescrizioneLike()
 	{
-		List<Articoli> items = articoliRepository.SelByDescrizioneLike("ACQUA ULIVETO%");
+		List<Articoli> items = articoliRepository.selByDescrizioneLike("ACQUA ULIVETO%");
 		assertEquals(2, items.size());
 	}
 	
