@@ -8,11 +8,9 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "BARCODE")
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
-@EqualsAndHashCode(exclude = {"articolo"})
+@NoArgsConstructor
 public class Barcode implements Serializable {
 
     @Id
@@ -23,6 +21,7 @@ public class Barcode implements Serializable {
     private String idTipoArt;
 
     @ManyToOne
+    @EqualsAndHashCode.Exclude
     @JoinColumn(name = "CODART", referencedColumnName = "codArt")
     @JsonBackReference
     private Articoli articolo;

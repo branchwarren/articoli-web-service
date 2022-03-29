@@ -96,10 +96,17 @@ public class ArticoliRepositoryTest
 				.isEqualTo("ACQUA ULIVETO 15 LT");
 				
 	}
-	
 
 	@Test
 	@Order(5)
+	public void TestfindByEan() throws Exception {
+		assertThat(articoliRepository.selByEan("12345678"))
+				.extracting(Articoli::getDescrizione)
+				.isEqualTo("Articolo di Test");
+	}
+
+	@Test
+	@Order(6)
 	//@Disabled
 	public void TestDelArt() throws Exception
 	{
@@ -109,7 +116,5 @@ public class ArticoliRepositoryTest
 		assertThat(articoliRepository.findByCodArt("123Test")).isNull();
 				
 	}
-	
-	
 
 }

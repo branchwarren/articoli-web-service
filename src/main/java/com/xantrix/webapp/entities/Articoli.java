@@ -11,11 +11,9 @@ import java.util.Set;
 
 @Entity
 @Table(name = "ARTICOLI")
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
-@EqualsAndHashCode
+@NoArgsConstructor
 public class Articoli implements Serializable {
 
     @Id

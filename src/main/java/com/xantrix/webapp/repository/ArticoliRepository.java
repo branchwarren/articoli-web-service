@@ -17,4 +17,14 @@ public interface ArticoliRepository extends PagingAndSortingRepository<Articoli,
     @Query(value = "SELECT * FROM ARTICOLI WHERE DESCRIZIONE LIKE :desArt", nativeQuery = true)
     List<Articoli> selByDescrizioneLike(@Param("desArt") String descrizione);
 
+    //JPQL
+    /*
+    @Query(value = "SELECT a FROM Articoli a JOIN a.barcode b WHERE b.barCode IN (:ean)")
+    Articoli selByEan(@Param("ean") String ean);
+     */
+
+    //SQL
+    @Query(value = "SELECT * FROM articoli a JOIN barcode b ON a.codart = b.codart WHERE b.barcode = :ean", nativeQuery = true)
+    Articoli selByEan(@Param("ean") String ean);
+
 }
